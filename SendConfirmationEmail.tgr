@@ -20,7 +20,7 @@ trigger SendConfirmationEmail on Session_Speaker__c (after insert) {
                     ',\nYour session "' + sessionSpeaker.Session__r.Name + '" on ' +
                     sessionSpeaker.Session__r.Session_Date__c + ' is confirmed.\n\n' +
                     'Thanks for speaking at the conference!';
-                EmailManager.sendMail(address, subject, message);
+                ConfManAppEmailManager.sendMail(address, subject, message);
             }
         }
     }
